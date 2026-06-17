@@ -1,13 +1,33 @@
-# Python-Projects
-This repository contains all the projects that I have done and am currently doing which are in python and uses various python libraries.
+# Python Projects
 
-Gender.py :
-In this project, I gave input some body measurements and classified them as of a male's or a female's. 
-After that I trained the model on it. I used the different available classifiers in the scikit learn library. 
-Then I as it to classify a different set of measurements and print the result for all the different classifiers.
+A comprehensive collection of Python projects showcasing machine learning, classification algorithms, and recommendation systems. This repository demonstrates practical applications of popular Python libraries and data science techniques.
 
-MovieRec.py : 
-In this project, I used the lightfm library to input the dataset of various different movies rated by different people. 
-I used 4 different loss functions and based on those, I displayed the known_positives which are the top rated movies by that person.
-With that I also displayed the top 3 recommendations given by each model based on the score.
-And then the top 3 with the highest overall score across all models.
+## Projects Overview
+
+### MovieRec.py
+A movie recommendation engine powered by collaborative filtering using the LightFM library. This project trains multiple recommendation models using different loss functions (WARP, BPR, WARP-KOS, and Logistic) on the MovieLens dataset. The system compares predictions across all models and provides personalized movie recommendations by identifying films users are likely to enjoy based on their preferences and viewing history. It showcases ensemble techniques by combining scores from multiple algorithms to produce robust recommendations.
+
+### Gender.py
+A machine learning classification system that predicts gender based on physical measurements (height, weight, and shoe size). This project implements and compares nine different classification algorithms from scikit-learn, including Decision Trees, SVM, Neural Networks, Random Forests, K-Nearest Neighbors, Gaussian Naive Bayes, and more. It demonstrates model training, prediction capabilities, and provides insights into how different machine learning approaches handle the same classification task.
+
+## Technologies Used
+
+- **Machine Learning**: scikit-learn, LightFM
+- **Data Processing**: NumPy
+- **Algorithms**: Classification, Collaborative Filtering, Ensemble Methods
+
+## Getting Started
+
+Each Python file is standalone and can be executed directly. Ensure you have the required dependencies installed:
+
+```bash
+pip install scikit-learn lightfm numpy
+```
+
+## Purpose
+
+These projects serve as practical examples of machine learning implementation, perfect for learning, reference, or as a foundation for more advanced applications.
+
+---
+
+**Repository Status**: Active | Open to Contributions | Continuously Evolving
