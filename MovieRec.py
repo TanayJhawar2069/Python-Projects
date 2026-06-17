@@ -29,13 +29,21 @@ def sample_recommendation(model1, model2, model3, model4, data, user_ids):
     for user_id in user_ids:
 
         #movies they already like
-        known_positives = data['item_labels'][data['train'].tocsr()[user_id].indices]
+        known_indices = data['train'].tocsr()[user_id].indices
+        known_positives = data['item_labels'][known_indices]
 
         #movies our model predicts they will like
         scores1 = model1.predict(user_id, np.arange(n_items))
         scores2 = model2.predict(user_id, np.arange(n_items))
         scores3 = model3.predict(user_id, np.arange(n_items))
         scores4 = model4.predict(user_id, np.arange(n_items))
+
+        # exclude already-rated items from recommendations
+        scores1[known_indices] = -np.inf
+        scores2[known_indices] = -np.inf
+        scores3[known_indices] = -np.inf
+        scores4[known_indices] = -np.inf
+
         #rank them in order of most liked to least
         top_items = [
             data['item_labels'][np.argsort(-scores1)][:3],
